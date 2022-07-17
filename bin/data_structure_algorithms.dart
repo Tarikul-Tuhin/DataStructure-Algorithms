@@ -11,9 +11,10 @@ void main() {
   print(newCustom.getIndexWiseValue(1)); // index 1 is are
   print(newCustom.getListAndLength()); // {3, {0: you, 1: are, 2: nice}}
 
-  newCustom.pop(); // will pop the last item. which is nice.
+  //newCustom.pop(); // will pop the last item. which is nice.
 
-  newCustom.push('great'); // will push new item. which is great
+  //newCustom.push('great'); // will push new item. which is great
+  newCustom.insertItemIndexWise(1, 'tuhin');
 
   print(newCustom.getListAndLength()); // {3, {0: you, 1: are, 2: great}}
 }
