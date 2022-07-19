@@ -61,11 +61,8 @@ class CustomArray {
 
 
 /*
-
 Array  ==> push - O(1)
            pop - O(1)
            insert - O(n)  ==> because, we need to shift each index after the inserting index
            delete - O(n)  ==> because, we need to shift each index after the deleting index
-
-
 */
