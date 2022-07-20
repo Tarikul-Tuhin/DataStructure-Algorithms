@@ -1,5 +1,6 @@
 import 'package:data_structure_algorithms/Data Structures/1. Arrays/creating_custom_array_data_structures.dart';
 import 'package:data_structure_algorithms/Data%20Structures/2.%20Hash%20Tables/customHashTableMaking.dart';
+import 'package:data_structure_algorithms/Data%20Structures/2.%20Hash%20Tables/firstRecurringCharacter.dart';
 
 void main() {
 /////////////////////////Arrays////////////////////////////////////
@@ -18,10 +19,13 @@ void main() {
 
 /////////////////////////HashTables////////////////////////////////////
 
-  MyHashtable hashTableInstance = MyHashtable(length: 50);
+  // MyHashtable hashTableInstance = MyHashtable(length: 50);
 
-  hashTableInstance.set('ac', 100);
-  hashTableInstance.set('xx', 20);
+  // hashTableInstance.set('ac', 100);
+  // hashTableInstance.set('xx', 20);
 
-  hashTableInstance.get('ac');
+  // hashTableInstance.get('ac');
+
+  FirstRecurringCharacter firstRecurringInstance = FirstRecurringCharacter();
+  firstRecurringInstance.getFirstRecurringCharacter([1, 2, 2, 1, 5, 6]);
 }
