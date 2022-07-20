@@ -18,7 +18,10 @@ void main() {
 
 /////////////////////////HashTables////////////////////////////////////
 
-  MyHashtable a = MyHashtable(length: 50);
-  a.hash('ac');
-  a.hash('dr');
+  MyHashtable hashTableInstance = MyHashtable(length: 50);
+
+  hashTableInstance.set('ac', 100);
+  hashTableInstance.set('xx', 20);
+
+  hashTableInstance.get('ac');
 }
