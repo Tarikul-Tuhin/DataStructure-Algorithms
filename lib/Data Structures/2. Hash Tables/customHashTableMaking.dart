@@ -17,6 +17,19 @@ class MyHashtable {
 
   set(key, value) {
     final address = hash(key);
+    // data = [2,2] if length is 2
+    // data = [50, 50, .....,50] if length is 50
+
+/*   ....................Inserting 2 items when length is 50....................
+    // step1 ==> if length 50. address = 49 ==> data[address] == 50 ==> data[49] == 50 ==> yes ==> data[49] = [] ==> data[address].add([key, value]) ==> data[49].add(['ac', 100]) ==> [50,..., [['ac', 100]], 50]
+    // step2 ==> if length 50. address = 20 ==> data[address] == 50 ==> data[20] == 50 ==> yes ==> data[20] = [] ==> data[address].add([key, value]) ==> data[20].add(['xx', 10]) ==> [50,...,[['xx', 10]],..., [['ac', 100]], 50]
+*/
+
+/*   ....................Inserting 2 items when length is 2....................
+    // step1 ==> if length 2. address = 1 ==> data[1] == 2 ==> data[1] == 2 ==> yes ==> data[1] = [] ==> data[address].add([key, value]) ==> data[1].add(['ac', 100]) ==> [2, [['ac', 100]]]
+    // step1 ==> if length 2. address = 1 ==> data[1] == 2 ==> data[1] == 2 ==> no ==> data[address].add([key, value]) ==> data[1].add(['acc', 5]) ==> [2, [['ac', 100], ['acc', 5]]]
+*/
+
     if (data[address] == length) {
       // here length is the number which is given by the user while calling the class constructor. So, if a user gives 2 as the length, it will generate a list with 2 element. and the value of each element will be 2. So, in this if condition we are checking whether in the address value, is there  2 exist in the address's index? if yes, it will enter into the condition, and replace the address index from 2 to an empty list. then, we will add our [key,value] list inside the empty list. Note: if there is less space on the memory, input may arise to 2. So, the [key,value] might get replaced with a new [key, value] into that particular address. That's why we are creating an empty list. Suppose, there are 2 elements on the List, and user wants to add 2 elements into the list, and the address or hash value of those two elements become 1. So, first time it will check the condition whether length 2 is available in the list? It will find yes, it will go inside. then when a user again insert another value and the hash code also become 1 like the 1st time insertion by the user, it now won't go inside the condition as there is no '2' right now. so, It will add second [key, value] inside that empty array after the first [key, value]. i.e. [[key1, value1],[key2, value2]]
       data[address] = [];
